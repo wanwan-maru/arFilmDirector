@@ -34,13 +34,13 @@
                     gesture-handler
                 ></a-image>
                 
-                <a-scene>                
-                    <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
-                    <a-entity geometry="primitive:plane;" material="shader:gif; src:assets/asset.gif"
-                        position="0 0 0.3" rotation="-90 0 0" scale="2 2 2"
-                    ></a-entity>
-                </a-scene>
             </a-marker>
+            <a-scene>                
+                <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
+                <a-entity geometry="primitive:plane;" material="shader:gif; src:assets/asset.gif"
+                    position="0 0 0.3" rotation="-90 0 0" scale="2 2 2"
+                ></a-entity>
+            </a-scene>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
