@@ -16,15 +16,20 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene embedded
+        <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            embedded
             gesture-detector
         >
             
             <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
-            <a-marker type="pattern" preset="custom" url="assets/marker.patt">
+            <a-marker type="pattern" preset="custom" url="assets/marker.patt" 
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
                 <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
                 <a-image
                     src="assets/asset.png"
@@ -32,15 +37,16 @@
                     class="clickable"
                     rotation="-90 0 0"
                     gesture-handler
-                ></a-image>
-                
+                ></a-image>                
             </a-marker>
-            <a-scene>                
+            
+            <!-- <a-scene> -->
                 <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
-                <a-entity geometry="primitive:plane;" material="shader:gif; src:assets/asset.gif"
-                    position="0 0 0.3" rotation="-90 0 0" scale="2 2 2"
-                ></a-entity>
-            </a-scene>
+            <!--    <a-entity geometry="primitive:plane;" material="shader:gif; src:assets/asset.gif"  -->
+            <!--        position="0 0 0.3" rotation="-90 0 0" scale="2 2 2"  -->
+            <!--    ></a-entity> -->
+            <!-- </a-scene> -->
+            
             <a-entity camera></a-entity>
         </a-scene>
     </body>
