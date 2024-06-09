@@ -7,43 +7,25 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <!-- shader ライブラリの読み込み -->
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-        <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
-        
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
+        <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
+        <a-marker
+            type="pattern"
+            preset="custom"
+            url="assets/marker.patt"
         >
-            <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
-                <a-image
-                    src="assets/asset.gif"
+            <a-scene>
+                <a-entity
+                    geometry="primitive:plane;" material="shader:gif; src:url(assets/asset.gif);"
                     scale="1 1 1"
-                    class="clickable"
                     rotation="-90 0 0"
-                    gesture-handler
-                ></a-image>
-            </a-marker>
+                ></a-entity>
+            </a-scene>
+        </a-marker>
 
-            <a-entity camera></a-entity>
+        <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
