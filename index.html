@@ -8,7 +8,7 @@
         <!-- GIFの場合は↓が必要 -->
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 
-        <!-- 画像の大きさを触って変更するには↓が必要 -->
+        <!-- 画像の大きさを触って変更するには↓が必要  -->
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         
@@ -18,8 +18,6 @@
     <body style="margin: 0; overflow: hidden;">
         <a-scene embedded
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
             gesture-detector
         >
             
@@ -30,14 +28,11 @@
                 url="assets/marker.patt"
                 
                 raycaster="objects: .clickable"
-                emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                emitevents="true"
             >
-                <a-scene>
-                
+                <a-scene>                
                     <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
-                    <!-- <a-image src="assets/asset.gif" scale="4 4 4" rotation="-90 0 0"></a-image>-->
 
                     <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
                     <a-entity
@@ -46,12 +41,11 @@
                         position="0 0 0.3"
                         rotation="-90 0 0"
                         scale="4 4 4"
-                        class="clickable"
                         gesture-handler
                     ></a-entity>
                 </a-scene>
             </a-marker>
-            <a-entity ></a-entity>
+            <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
