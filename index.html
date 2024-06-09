@@ -7,6 +7,7 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <!-- shader ライブラリの読み込み -->
         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+        <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
         
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
@@ -35,7 +36,8 @@
                 <a-scene>
                     <a-entity
                         geometry="primitive:plane;"
-                        material="shader:gif; src:assets/asset.gif;"
+                        material="shader:gif; src:url(assets/asset.gif);"
+                        gif=""
                         scale="1 1 1"
                         class="clickable"
                         rotation="-90 0 0"
