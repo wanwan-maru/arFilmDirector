@@ -33,15 +33,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-scene>
-                    <a-entity
-                        geometry="primitive:plane;" material="shader:gif; src:url(assets/asset.gif);"
-                        scale="1 1 1"
-                        class="clickable"
-                        rotation="-90 0 0"
-                        gesture-handler
-                  　></a-entity>
-                </a-scene>
+                <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
+                <a-image
+                    src="assets/asset.gif"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
