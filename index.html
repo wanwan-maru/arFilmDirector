@@ -2,11 +2,11 @@
 <html>
     <head>
         <!-- A-Frame ライブラリの読み込み ※GIFはV0.9.0から -->
-        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <!-- AR.js ライブラリの読み込み -->
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <!-- shader ライブラリの読み込み https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js -->
-        <script src="https://raw.githack.com/kitakuma/aframe-gif-shader-fix4Me/master/dist/aframe-gif-shader.js"></script>
+        <!-- shader ライブラリの読み込み -->
+        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
         
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
@@ -21,24 +21,25 @@
             embedded
             gesture-detector
         >
-            <!-- assets -->
-            <a-assets>
-                <img id="mano" src="assets/asset.gif">       
-            </a-assets>
-            
             <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker
-                type="pattern" preset="custom" url="assets/marker.patt"
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
             >
-                    <!-- ここに表示する画像を入れる。gifの場合は↓のようにする -->
-                    <a-entity
-                        geometry="primitive:plane;" material="shader:gif; src:#mano;"
-                        rotation="-90 0 0" scale="3 3 3"
-                        gesture-handler class="clickable"
-                    ></a-entity>
+                <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
+                <a-image
+                    src="assets/asset.gif"
+                    scale="5 5 5"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
             </a-marker>
 
             <a-entity camera></a-entity>
