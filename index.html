@@ -10,17 +10,10 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
-        <a-marker
-            type="pattern"
-            preset="custom"
-            url="assets/marker.patt"
-        >
             <a-scene>
                 <a-entity
                     geometry="primitive:plane;" material="shader:gif; src:url(assets/asset.gif);"
-                    scale="1 1 1"
-                    rotation="-90 0 0"
+                    position="0 0 0.3" rotation="-90 0 0" scale="1 1 1"
                 ></a-entity>
             </a-scene>
         </a-marker>
