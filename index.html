@@ -35,17 +35,15 @@
                 id="markerA"
             >
                 <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
-                <!-- <a-image src="assets/asset.gif" scale="4 4 4" rotation="-90 0 0"></a-image>-->
+                <!-- <a-image src="assets/asset.gif" scale="4 4 4" rotation="-90 0 0" class="clickable" gesture-handler></a-image>-->
 
                 <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
                 <a-entity
-                geometry="primitive:plane;"
-                material="assets/asset.gif"
-                position="0 0 0.3"
-                rotation="-90 0 0"
-                scale="4 4 4"
-                class="clickable"
-                gesture-handler
+                    geometry="primitive:plane;"
+                    material="shader:gif; src:assets/asset.gif"
+                    position="0 0 0.3"
+                    rotation="-90 0 0"
+                    scale="4 4 4"
                 ></a-entity>
             </a-marker>
 
