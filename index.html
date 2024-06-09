@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
         <!-- GIFの場合は↓が必要 -->
-        <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+         <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 
         <!-- 画像の大きさを触って変更するには↓が必要  -->
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -17,21 +17,27 @@
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene embedded
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            gesture-detector
         >
             
             <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker type="pattern" preset="custom" url="assets/marker.patt">
+                <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
+                <a-image
+                    src="assets/asset.png"
+                    scale="3 3 3"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+                
                 <a-scene>                
-                    <!-- ここにAR Markerに対応する画像を設定する。srcでフォルダ内の画像ファイルを指定している -->
                     <!-- AR Markerに対応するgifの場合はこう。materialでフォルダ内のGIFファイルを指定している -->
-                    <a-entity
-                        geometry="primitive:plane;"
-                        material="shader:gif; src:assets/asset.gif"
-                        position="0 0 0.3"
-                        rotation="-90 0 0"
-                        scale="2 2 2"
-                        gesture-handler
+                    <a-entity geometry="primitive:plane;" material="shader:gif; src:assets/asset.gif"
+                        position="0 0 0.3" rotation="-90 0 0" scale="2 2 2"
                     ></a-entity>
                 </a-scene>
             </a-marker>
