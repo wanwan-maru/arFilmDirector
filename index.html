@@ -19,7 +19,6 @@
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded 
-            gesture-detector
         >
             <!-- assets -->
             <a-assets>
@@ -31,6 +30,7 @@
                 type="pattern" preset="custom" url="assets/marker.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
             >
                     <!-- ここに表示するgif情報を入れている -->
                     <a-entity
