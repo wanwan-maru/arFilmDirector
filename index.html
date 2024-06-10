@@ -26,7 +26,7 @@
                 <img id="mano" src="assets/asset.gif">       
             </a-assets>
             
-            <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
+            <!-- ここにAR Marker1の設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker
                 type="pattern" preset="custom" url="assets/pattern-kantoku.patt"
                 raycaster="objects: .clickable"
@@ -41,23 +41,18 @@
                     ></a-entity>
             </a-marker>
 
-            <!-- ここにAR Markerの設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
+            <!-- ここにAR Marker2の設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
+                type="pattern" preset="custom" url="assets/marker.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
             >
                 <!-- ここに表示する画像情報を入れている -->
                 <a-image
                     src="assets/asset.gif"
-                    scale="3 3 3"
-                    class="clickable"
-                    rotation="-90 0 0"
-                    gesture-handler
+                    rotation="-90 0 0" scale="3 3 3"
+                    gesture-handler class="clickable"
                 ></a-image>
             </a-marker>
 
