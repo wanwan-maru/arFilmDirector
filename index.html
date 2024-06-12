@@ -45,10 +45,10 @@
             >
                 <!-- ここに表示する画像情報を入れている。pngで透過可能。gifも使えるけど静止画になる -->
                 <!-- 画像を水平に表示させる場合：rotation の最初の角度を「-90」, 他はhttps://aframe.io/docs/1.6.0/introduction/参照 -->
-                <!-- 画像の位置：position x y z  -->
+                <!-- 画像の位置：マーカー基準でposition x y(左右) z(上下)  -->
                 <a-image
                     src="assets/asset.gif"
-                    rotation="-90 0 0" scale="3 3 3" position="0 1 0"
+                    rotation="-90 0 0" scale="3 3 3" position="0 1 -1"
                     gesture-handler class="clickable"
                 ></a-image>
             </a-marker>
