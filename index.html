@@ -45,9 +45,10 @@
             >
                 <!-- ここに表示する画像情報を入れている。pngで透過可能。gifも使えるけど静止画になる -->
                 <!-- 画像を水平に表示させる場合：rotation の最初の角度を「-90」, 他はhttps://aframe.io/docs/1.6.0/introduction/参照 -->
+                <!-- 画像の位置：position x y z  -->
                 <a-image
                     src="assets/asset.gif"
-                    rotation="-90 0 0" scale="3 3 3" position="0 1 1"
+                    rotation="-90 0 0" scale="3 3 3" position="0 1 0"
                     gesture-handler class="clickable"
                 ></a-image>
             </a-marker>
@@ -60,7 +61,7 @@
                 cursor="fuse: false; rayOrigin: mouse;"
             >
                 <a-entity geometry="primitive:plane"
-                    material="shader:gif; src:url(assets/asset.gif),
+                    material="shader:gif; src:url(assets/asset2.png),
                                           src:url(assets/PI.png);"
                     rotation="-90 0 0" scale="3 3 3"
                     gesture-handler class="clickable"
