@@ -44,18 +44,28 @@
                 cursor="fuse: false; rayOrigin: mouse;"
             >
                 <!-- ここに表示する画像情報を入れている。pngで透過可能。gifも使えるけど静止画になる -->
+                <!-- 画像を水平に表示させる場合：rotation の最初の角度を「-90」, 他はhttps://aframe.io/docs/1.6.0/introduction/参照 -->
                 <a-image
                     src="assets/asset.gif"
                     rotation="-90 0 0" scale="3 3 3" position="0 1 1"
                     gesture-handler class="clickable"
                 ></a-image>
-                <a-image
-                    src="assets/PI.png"
-                    rotation="-90 0 0" scale="2 2 2" position="0 1 -1"
-                    gesture-handler class="clickable"
-                ></a-image>
             </a-marker>
-
+                
+            <!-- ここにAR Marker3の設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
+            <a-marker
+                type="pattern" preset="custom" url="assets/markerAR.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+            >
+                <a-entity geometry="primitive: box"
+                    material="envMap: url(assets/asset.gif),
+                                      url(assets/PI.png), 
+                    roughness: 0">
+                </a-entity>
+            </a-marker>
+                
             <a-entity camera></a-entity>
         </a-scene>
     </body>
