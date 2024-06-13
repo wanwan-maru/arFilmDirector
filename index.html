@@ -60,14 +60,15 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
             >
-                <!-- 複数表示する場合は、手前に来るものが下に来るように並べる -->
+                <!-- 複数表示する場合は入れ子にして、奥に表示するものから記述する -->
                 <a-image
                     src="assets/PI.png"
                     rotation="-90 0 0" scale="2 2 2" position="0 0 0"
-                    gesture-handler class="clickable">
+                    gesture-handler class="clickable"
+                    ></a-image>
                     <a-image
                         src="assets/PI.png"
-                        position="0 0 -1">
+                        position="0 0 -.2">
                     </a-image>                
             </a-marker>
                 
