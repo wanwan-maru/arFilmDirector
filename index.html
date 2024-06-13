@@ -31,7 +31,7 @@
                     <!-- ここに表示するgif情報を入れている -->
                     <a-entity
                         geometry="primitive:plane;" material="shader:gif; src:url(assets/asset.gif);"
-                        rotation="-90 0 0" scale="3 3 3"
+                        rotation="-90 0 0" scale="4 4 4"
                         gesture-handler class="clickable"
                     ></a-entity>
             </a-marker>
@@ -60,16 +60,15 @@
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
             >
-                <!-- 複数表示する場合は入れ子にして、奥に表示するものから記述する -->
+                <!-- 複数表示する場合は入れ子にしたほうが楽、奥に表示するものから記述する -->
                 <a-image
                     src="assets/PI.png"
-                    rotation="-90 0 0" scale="2 2 2" position="0 0 0"
-                    gesture-handler class="clickable"
-                    ></a-image>
+                    rotation="-90 0 0" scale="2 2 2" position="0 0 0">
                     <a-image
                         src="assets/PI.png"
-                        position="0 0 -.2">
-                    </a-image>                
+                        scale="1.5 1.5 1.5" position="0 0 -.2">
+                    </a-image>
+                </a-image>
             </a-marker>
                 
             <a-entity camera></a-entity>
