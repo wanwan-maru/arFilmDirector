@@ -38,7 +38,7 @@
 
             <!-- ここにAR Marker2の設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker
-                type="pattern" preset="custom" url="assets/marker.patt"
+                type="pattern" preset="custom" url="assets/markerAR.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -55,18 +55,18 @@
                 
             <!-- ここにAR Marker3の設定を入れる。urlでフォルダ内の.pattファイルを指定している -->
             <a-marker
-                type="pattern" preset="custom" url="assets/markerAR.patt"
+                type="pattern" preset="custom" url="assets/marker.patt"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
             >
                 <!-- 複数表示する場合は入れ子にしたほうが楽、奥に表示するものから記述する -->
                 <a-image
-                    src="assets/PI.png"
+                    src="assets/HCG-kh.png"
                     rotation="-90 0 0" scale="2 2 2" position="0 0 0">
                     <a-image
-                        src="assets/PI.png"
-                        scale="1.5 1.5 1.5" position="0 0 -.2">
+                        src="assets/HCG-mm.png"
+                        scale="2 2 2" position="0 0 -.2">
                     </a-image>
                 </a-image>
             </a-marker>
